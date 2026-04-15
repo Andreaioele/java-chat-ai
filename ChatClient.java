@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class ChatClient {
-    private static final int PORT = 5000;
+    private static final int PORT = 5001;
 
     public static void main(String[] args) {
         if (args.length != 1) {
@@ -37,8 +37,8 @@ public class ChatClient {
 
             // Thread principale per leggere da tastiera e inviare al Server
             try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                 BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
-                
+                    BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
+
                 System.out.print("[Tu]: ");
                 String userInput;
                 while ((userInput = stdIn.readLine()) != null) {

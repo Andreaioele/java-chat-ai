@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class ChatServer {
-    private static final int PORT = 5000;
+    private static final int PORT = 5001;
 
     public static void main(String[] args) {
         System.out.println("=== Chat Server Avviato ===");
@@ -33,8 +33,8 @@ public class ChatServer {
 
             // Thread principale per leggere da tastiera e inviare al Client
             try (PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                 BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
-                
+                    BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
+
                 System.out.print("[Tu]: ");
                 String userInput;
                 while ((userInput = stdIn.readLine()) != null) {
